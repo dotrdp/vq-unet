@@ -1,5 +1,4 @@
-# My VQ-UNET Project
-
+# VQ-UNET Implementation
 ## Overview
 This project implements the VQ-UNET architecture, which combines the concepts of Vector Quantization (VQ) and U-Net for image generation and reconstruction tasks. The model leverages skip connections and codebooks to enhance performance and maintain high-quality outputs.
 
