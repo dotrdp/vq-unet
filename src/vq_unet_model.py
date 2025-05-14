@@ -150,4 +150,4 @@ class VQUNet(nn.Module):
             current_features = conv_block(current_features) # This is either Conv layers or Tanh for last
 
         reconstructed_x = current_features
-        return reconstructed_x, total_vq_loss
+        return reconstructed_x, total_vq_loss, skip_connections_quantized
