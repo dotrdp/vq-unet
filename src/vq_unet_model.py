@@ -128,7 +128,7 @@ class VQUNet(nn.Module):
         reversed_quantized_skips_for_concat = skip_connections_quantized[:-1][::-1]
 
         current_features = decoder_input # Start with quantized bottleneck
-        
+        bottleneck_qz = current_features
         for i, dec_m_dict in enumerate(self.dec_blocks):
             upsample_layer = dec_m_dict['upsample']
             conv_block = dec_m_dict['conv']
@@ -150,4 +150,4 @@ class VQUNet(nn.Module):
             current_features = conv_block(current_features) # This is either Conv layers or Tanh for last
 
         reconstructed_x = current_features
-        return reconstructed_x, total_vq_loss, skip_connections_quantized, current_features
+        return reconstructed_x, total_vq_loss, skip_connections_quantized, bottleneck_qz
